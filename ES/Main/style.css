@@ -1,0 +1,1939 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@font-face {
+  font-family: Lubalin Graph;
+  src: url(/Fonts/LUBALIN\ GRAPH\ REGULAR.TTF) format("truetype");
+}
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  list-style: none;
+  box-sizing: border-box;
+  text-decoration: none;
+  scroll-behavior: smooth;
+}
+
+:focus,
+:active {
+  outline: none;
+}
+a:focus,
+a:active {
+  outline: none;
+}
+
+nav,
+footer,
+header,
+aside {
+  display: block;
+}
+
+:root {
+  --boss: rgb(160, 160, 160);
+  --colors: rgb(210, 198, 198);
+}
+
+input,
+button,
+textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+button {
+  cursor: pointer;
+}
+a:hover {
+}
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+button:focus {
+  outline: none;
+}
+a,
+a:visited {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+  transition: 0.3s;
+}
+ul li {
+  list-style: none;
+}
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  font-size: inherit;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+body {
+  background: rgba(255, 254, 247, 1);
+}
+.body__container {
+  min-height: 100%;
+  overflow: hidden;
+}
+.header {
+  padding: 0 20px;
+}
+._container {
+  max-width: 1360px;
+  margin: 0 auto;
+  box-sizing: content-box;
+}
+.header__body {
+  height: 80px;
+  background: rgba(75, 97, 241, 1);
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 40px 0 0 0;
+  padding: 15px;
+}
+.header__nav {
+  width: 100%;
+}
+.nav__list {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding-left: 17px;
+  max-width: 100%;
+}
+.list__item {
+  display: flex;
+  align-items: center;
+}
+.list__item:not(:nth-child(6)) {
+  margin-right: 23px;
+}
+.list__item:nth-child(6) {
+  margin-right: 31px;
+}
+.menu-1 {
+  width: 185px;
+  height: 22px;
+  position: relative;
+  display: inline-block;
+}
+
+/* Бокс меню */
+.menu__box-1 {
+  background-color: transparent;
+  overflow: hidden;
+}
+/* Стан активного боксу */
+.menu__box-1.active {
+  background-color: white;
+}
+.menu__box-1.active .menu__arrow {
+  transform: rotate(180deg);
+}
+/* Кнопка меню */
+.menu__button-1 {
+  position: absolute;
+  padding: 10px 15px 5px 15px;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  color: #fffef7;
+  border: none;
+  cursor: pointer;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  white-space: nowrap;
+  box-sizing: content-box;
+  transform: translate(0, -10px);
+}
+
+/* Активна кнопка */
+.menu__box-1.active .menu__button-1 {
+  width: 198px;
+  color: #000;
+  background-color: #fff;
+  transform: translate(0, -10px);
+  border-top-left-radius: 20px; /* Закруглення верхнього лівого кута */
+  border-top-right-radius: 20px; /* Закруглення верхнього правого кута */
+  border-bottom-left-radius: 0; /* Нижні кути без закруглення */
+  border-bottom-right-radius: 0;
+}
+/* Випадаюче меню */
+.menu__dropdown-1 {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: none; /* За замовчуванням приховане */
+  position: absolute; /* Накладається поверх інших елементів */
+  top: 100%; /* Вирівнюється по нижньому краю кнопки */
+  left: 0;
+  width: 228px; /* Ширина відповідає ширині кнопки */
+  background-color: #ffffff;
+  z-index: 1000; /* Забезпечує накладання поверх інших елементів */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Тінь для стилю */
+  border-radius: 0 0 20px 20px; /* Закруглення нижніх кутів */
+  overflow: hidden; /* Запобігає виходу контенту за межі */
+}
+
+.menu__dropdown-1.visible {
+  display: block;
+  border-top-left-radius: 0; /* Закруглення верхнього лівого кута */
+  border-top-right-radius: 0; /* Закруглення верхнього правого кута */
+  border-bottom-left-radius: 20px; /* Нижні кути без закруглення */
+  border-bottom-right-radius: 20px;
+}
+
+.menu__dropdown-1 li {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  color: #2e2e2e;
+  white-space: nowrap;
+  background-color: #ffffff;
+  box-sizing: content-box;
+  padding: 5px 15px;
+}
+.menu__dropdown-1 li:hover {
+  background-color: #f0f0f0;
+}
+
+.menu__dropdown-1 a {
+  text-decoration: none;
+  color: #333;
+  display: block;
+  width: 100%;
+}
+.menu-2 {
+  width: 249px;
+  height: 22px;
+  position: relative;
+  display: inline-block;
+}
+
+/* Бокс меню */
+.menu__box-2 {
+  background-color: transparent;
+  overflow: hidden;
+}
+/* Стан активного боксу */
+.menu__box-2.active {
+  background-color: white;
+}
+.menu__box-2.active .menu__arrow {
+  transform: rotate(180deg);
+}
+/* Кнопка меню */
+.menu__button-2 {
+  position: absolute;
+  padding: 10px 15px 5px 15px;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  color: #fffef7;
+  border: none;
+  cursor: pointer;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  white-space: nowrap;
+  box-sizing: content-box;
+  transform: translate(0, -10px);
+}
+
+/* Активна кнопка */
+.menu__box-2.active .menu__button-2 {
+  width: 249px;
+  color: #000;
+  background-color: #fff;
+  transform: translate(0, -10px);
+  border-top-left-radius: 20px; /* Закруглення верхнього лівого кута */
+  border-top-right-radius: 20px; /* Закруглення верхнього правого кута */
+  border-bottom-left-radius: 0; /* Нижні кути без закруглення */
+  border-bottom-right-radius: 0;
+}
+/* Випадаюче меню */
+.menu__dropdown-2 {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: none; /* За замовчуванням приховане */
+  position: absolute; /* Накладається поверх інших елементів */
+  top: 100%; /* Вирівнюється по нижньому краю кнопки */
+  left: 0;
+  width: 279px; /* Ширина відповідає ширині кнопки */
+  background-color: #ffffff;
+  z-index: 1000; /* Забезпечує накладання поверх інших елементів */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Тінь для стилю */
+  border-radius: 0 0 20px 20px; /* Закруглення нижніх кутів */
+  overflow: hidden; /* Запобігає виходу контенту за межі */
+}
+
+.menu__dropdown-2.visible {
+  display: block;
+  border-top-left-radius: 0; /* Закруглення верхнього лівого кута */
+  border-top-right-radius: 0; /* Закруглення верхнього правого кута */
+  border-bottom-left-radius: 20px; /* Нижні кути без закруглення */
+  border-bottom-right-radius: 20px;
+}
+
+.menu__dropdown-2 li {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  color: #2e2e2e;
+  white-space: nowrap;
+  background-color: #ffffff;
+  box-sizing: content-box;
+  padding: 5px 15px;
+}
+.menu__dropdown-2 li:hover {
+  background-color: #f0f0f0;
+}
+
+.menu__dropdown-2 a {
+  text-decoration: none;
+  color: #333;
+  display: block;
+  width: 100%;
+}
+.menu-3 {
+  width: 67px;
+  height: 34px;
+  position: relative;
+  display: inline-block;
+  border: 1px solid #ffffff;
+  border-radius: 34px;
+}
+
+/* Бокс меню */
+.menu__box-3 {
+  background-color: transparent;
+  overflow: hidden;
+}
+/* Стан активного боксу */
+.menu__box-3.active {
+  background-color: white;
+}
+.menu__box-3.active .menu__arrow {
+  transform: rotate(180deg);
+}
+/* Кнопка меню */
+.menu__button-3 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  color: #fffef7;
+  border: none;
+  cursor: pointer;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  white-space: nowrap;
+  box-sizing: content-box;
+}
+
+/* Активна кнопка */
+.menu__box-3.active .menu__button-3 {
+  width: 67px;
+  color: #000;
+  background-color: #fff;
+  border-top-left-radius: 17px; /* Закруглення верхнього лівого кута */
+  border-top-right-radius: 17px; /* Закруглення верхнього правого кута */
+  border-bottom-left-radius: 0; /* Нижні кути без закруглення */
+  border-bottom-right-radius: 0;
+  transform: translateX(-1px);
+}
+/* Випадаюче меню */
+.menu__dropdown-3 {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: none; /* За замовчуванням приховане */
+  position: absolute; /* Накладається поверх інших елементів */
+  top: 100%; /* Вирівнюється по нижньому краю кнопки */
+  left: 0;
+  width: 67px; /* Ширина відповідає ширині кнопки */
+  background-color: #ffffff;
+  z-index: 1000; /* Забезпечує накладання поверх інших елементів */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Тінь для стилю */
+  border-radius: 0 0 20px 20px; /* Закруглення нижніх кутів */
+  overflow: hidden; /* Запобігає виходу контенту за межі */
+  transform: translateX(-1px);
+}
+
+.menu__dropdown-3.visible {
+  display: block;
+  border-top-left-radius: 0; /* Закруглення верхнього лівого кута */
+  border-top-right-radius: 0; /* Закруглення верхнього правого кута */
+  border-bottom-left-radius: 20px; /* Нижні кути без закруглення */
+  border-bottom-right-radius: 20px;
+}
+
+.menu__dropdown-3 li {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  color: #2e2e2e;
+  white-space: nowrap;
+  background-color: #ffffff;
+  box-sizing: content-box;
+  padding: 5px 10px;
+}
+.menu__dropdown-3 li:hover {
+  background-color: #f0f0f0;
+}
+
+.menu__dropdown-3 a {
+  text-decoration: none;
+  color: #333;
+  display: block;
+  width: 100%;
+}
+.nav__link {
+  text-align: center;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  color: #fffef7;
+  position: relative;
+  white-space: nowrap;
+}
+.nav__link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px; /* Розташування підкреслення під текстом */
+  width: 100%;
+  height: 1px;
+  background-color: #ffffff;
+  transform: scaleX(0); /* Початковий стан: підкреслення приховане */
+  transform-origin: left; /* Анімація починається зліва */
+  transition: transform 0.3s ease; /* Тривалість анімації при появі */
+}
+.nav__link:hover::after {
+  transform: scaleX(1); /* Підкреслення з’являється при наведенні */
+}
+.nav__link::after {
+  transition: transform 0.3s ease, transform-origin 0s 0.3s;
+}
+.header__contact {
+  width: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 100%;
+  text-align: center;
+  letter-spacing: 0.03em;
+  color: #fffef7;
+  white-space: nowrap;
+  gap: 10px;
+}
+.open {
+  display: flex !important;
+  overflow: hidden;
+}
+.burger {
+  display: none;
+  position: relative;
+  z-index: 50;
+  align-items: center;
+  justify-content: flex-end;
+  width: 40px;
+  height: 19px;
+}
+.burger span {
+  height: 2.5px;
+  width: 32.5px;
+  transform: scale(1);
+  background: rgba(255, 254, 247, 1);
+}
+.burger::before,
+.burger::after {
+  content: "";
+  position: absolute;
+  height: 2.5px;
+  width: 32.5px;
+  background: rgba(255, 254, 247, 1);
+  transition: all 0.3s ease 0s;
+}
+.burger::before {
+  top: 0;
+}
+.burger::after {
+  bottom: 0;
+}
+.page {
+  flex: 1 1 auto;
+}
+.main-block {
+  box-sizing: content-box;
+  padding: 0 20px;
+  margin-top: 120px;
+}
+.page__main-block-1 {
+  margin-top: 60px;
+}
+.main__block-1 {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  max-width: 908px;
+  margin: 0 auto;
+  gap: 20px;
+}
+.block-1__title {
+  font-family: "Lubalin Graph";
+  font-style: normal;
+  font-weight: 5;
+  font-size: 100px;
+  line-height: 100%;
+  text-align: center;
+  text-transform: uppercase;
+  color: #2e2e2e;
+}
+.block-1__box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 670px;
+  gap: 20px;
+}
+.block-1__p {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 120%;
+  text-align: justify;
+  color: #2e2e2e;
+}
+.block-1__circle {
+  width: 200px;
+  height: 200px;
+  border-radius: 100px;
+  background: rgba(255, 238, 88, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Lubalin Graph";
+  font-style: normal;
+  font-weight: 5;
+  font-size: 18px;
+  line-height: 26px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #2e2e2e;
+  border: 1px solid #000;
+  transition: 0.8s;
+  cursor: pointer;
+  animation: pulse 3s infinite;
+}
+.block-1__circle:hover {
+  background: rgba(75, 97, 241, 1);
+  color: #fffef7;
+  animation: none;
+}
+@keyframes pulse {
+  0% {
+    scale: 1;
+  }
+  50% {
+    scale: 1.1;
+    background: rgb(247, 227, 53);
+  }
+  100% {
+    scale: 1;
+  }
+}
+.page__main-block-2 {
+  overflow-x: hidden;
+}
+.main__block-2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0;
+  gap: 40px;
+}
+.block-2__content {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.content__title {
+  font-family: "Lubalin Graph";
+  font-style: normal;
+  font-weight: 5;
+  font-size: 70px;
+  line-height: 100%;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  color: #2e2e2e;
+}
+.content__text {
+  max-width: 670px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 20px;
+}
+.content__text p {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 120%;
+  text-align: justify;
+  letter-spacing: -0.05em;
+  color: #2e2e2e;
+}
+.content__text a {
+  background: rgba(255, 238, 88, 1);
+  padding: 13px 29px 13px 29px;
+  gap: 10px;
+  border-radius: 30px;
+  width: 183px;
+  height: 54px;
+  border: 1px solid #000;
+  font-family: "Lubalin Graph";
+  font-style: normal;
+  font-weight: 5;
+  font-size: 18px;
+  line-height: 26px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #2e2e2e;
+}
+.content__text a:hover {
+  color: rgba(255, 254, 247, 1);
+  background: rgba(75, 97, 241, 1);
+}
+.block-2__slider {
+  overflow: hidden;
+  position: relative;
+}
+.slider__wrapper {
+  display: flex;
+  gap: 20px;
+}
+.slider__img {
+  border-radius: 30px;
+  flex-shrink: 0;
+  animation: slide 25s linear infinite;
+}
+@keyframes slide {
+  0% {
+    transform: translateZ(0);
+  }
+  100% {
+    transform: translate3d(-2760px, 0, 0);
+  }
+}
+.page__main-block-3 {
+}
+.main__block-3 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 0;
+  gap: 40px;
+}
+.block-3__title {
+  font-family: "Lubalin Graph";
+  font-style: normal;
+  font-weight: 5;
+  font-size: 70px;
+  line-height: 100%;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  color: #2e2e2e;
+}
+.block-3__content {
+  max-width: 1360px;
+  width: 100%;
+  padding-top: 62.1%;
+  position: relative;
+}
+.content__circle {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  gap: 10px; /* Frame 21162 */
+  border: 3px solid #4b61f1;
+  border-radius: 100%;
+}
+.medium {
+  max-width: 476px;
+  max-height: 476px;
+  width: 34vw;
+  height: 34vw;
+  top: 0;
+}
+.blue__circle {
+  background-color: #4b61f1;
+}
+.circle__title {
+  font-family: "Lubalin Graph";
+  font-style: normal;
+  font-weight: 5;
+  font-size: clamp(60px, 8.6vw, 120px);
+  line-height: 100%;
+  text-align: center;
+  text-transform: uppercase;
+  color: #fffef7;
+}
+.circe__text {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: clamp(12px, 1.8vw, 24px);
+  line-height: 100%;
+  text-align: center;
+  letter-spacing: -0.05em;
+  color: #fffef7;
+}
+.small {
+  max-width: 354px;
+  max-height: 354px;
+  width: 25.3vw;
+  height: 25.3vw;
+}
+.small h4 {
+  color: #4b61f1;
+}
+.small p {
+  color: #2e2e2e;
+}
+.voluntarios {
+  top: 0;
+  left: 36%;
+}
+.personas {
+  top: 43%;
+  left: 27%;
+}
+.programas {
+  bottom: 0;
+}
+.big {
+  max-width: 628px;
+  max-height: 628px;
+  width: 44.9vw;
+  height: 44.9vw;
+  right: 0;
+  bottom: 0;
+}
+.page__block-video {
+}
+.block__video {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 40px;
+}
+.video__title {
+  font-family: "Lubalin Graph";
+  font-style: normal;
+  font-weight: 5;
+  font-size: 70px;
+  line-height: 100%;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  color: #2e2e2e;
+}
+.video__container {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;
+}
+.video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 30px;
+}
+.page__block-projects {
+}
+.block__projects {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 40px;
+}
+.project__content {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.project__title {
+  font-family: "Lubalin Graph";
+  font-style: normal;
+  font-weight: 5;
+  font-size: 70px;
+  line-height: 100%;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  color: #2e2e2e;
+}
+.project__text {
+  max-width: 660px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+}
+.project__text p {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 120%;
+  text-align: justify;
+  letter-spacing: -0.05em;
+  color: #2e2e2e;
+}
+.project__text a {
+  background: rgba(255, 238, 88, 1);
+  padding: 13px 52px;
+  border: 1px solid #000;
+  border-radius: 30px;
+  font-family: "Lubalin Graph";
+  font-style: normal;
+  font-weight: 5;
+  font-size: 18px;
+  line-height: 26px;
+  text-align: center;
+  justify-content: center;
+  text-transform: uppercase;
+  color: #2e2e2e;
+}
+.project__text a:hover {
+  background: rgba(75, 97, 241, 1);
+  color: #fffef7;
+}
+.swiper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  overflow: hidden;
+}
+.swiper-wrapper {
+  width: 100%;
+  display: flex;
+}
+.swiper-slide {
+  display: flex;
+  gap: 20px;
+}
+
+.slider__card {
+  max-width: 670px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  background: rgba(255, 254, 247, 1);
+  border: 1px solid #000;
+  padding: 20px;
+  border-radius: 30px;
+  gap: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+  overflow: hidden;
+}
+.slider__card:hover {
+  background: rgba(75, 97, 241, 1);
+}
+.slider__card:hover .card__info h2 {
+  color: rgba(255, 254, 247, 1);
+}
+.slider__card:hover .card__info p {
+  color: rgba(255, 254, 247, 1);
+}
+.card__img {
+  width: 630px;
+  height: 335px;
+
+  border-radius: 30px;
+  object-fit: cover;
+}
+.card__info {
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 10px;
+  overflow: hidden;
+}
+.card__info h2 {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 26px;
+  line-height: 31px;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  color: #2e2e2e;
+  white-space: nowrap;
+}
+.card__info p {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  color: #2e2e2e;
+  opacity: 0.6;
+}
+.slider__buttons-box {
+  max-width: 670px;
+  width: 100%;
+}
+.slider__buttons {
+  width: 100%;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 43px;
+  border: 1px solid #000;
+}
+.swiper-button-next,
+.swiper-button-prev {
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  border: 1px solid #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 17px;
+  cursor: pointer;
+  background-color: #ffffff;
+}
+
+.slider__profile {
+  max-width: 670px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 20px;
+  border-radius: 30px;
+  background: rgba(255, 254, 247, 1);
+  border: 1px solid #000;
+  padding: 20px;
+}
+.card__profile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.profile__circle {
+  width: 80px;
+  height: 80px;
+  border-radius: 100%;
+  background: rgba(217, 217, 217, 1);
+}
+.profile__user {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 34px;
+  line-height: 100%;
+  letter-spacing: -0.03em;
+  color: #2e2e2e;
+  margin: 0;
+}
+.card__about {
+  width: 630px;
+  border-top: 1px solid #000;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.card__about svg {
+  margin-top: 32px;
+}
+.about__info {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 120%;
+  letter-spacing: -0.05em;
+  color: #2e2e2e;
+  opacity: 0.8;
+  margin-top: 20px;
+}
+.page__block-social {
+}
+.block__social {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+}
+.social__title {
+  width: 100%;
+  font-family: "Lubalin Graph";
+  font-style: normal;
+  font-weight: 5;
+  font-size: 70px;
+  line-height: 100%;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+  color: #2e2e2e;
+  margin: 0;
+  text-align: left;
+}
+.social__media {
+  max-width: 805px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 11px;
+}
+.facebook {
+  width: 230px;
+  height: 130px;
+  border-radius: 86px;
+  border: 1px solid #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(-15deg);
+}
+.facebook,
+.instagram,
+.telegram,
+.linkedin {
+  transition: 0.3s;
+  cursor: pointer;
+}
+.facebook:hover {
+  background: rgba(65, 92, 160, 1);
+
+  transform: scale(0.95) rotate(-15deg);
+}
+.facebook:hover svg {
+  fill: #fffef7;
+}
+.facebook svg {
+  width: 50px;
+  height: 85px;
+}
+.instagram {
+  width: 140px;
+  height: 140px;
+  border-radius: 100%;
+  border: 1px solid #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.instagram svg {
+  width: 39px;
+  height: 39px;
+}
+.instagram:hover svg {
+  fill: #fffef7;
+}
+.instagram:hover {
+  background: linear-gradient(
+    to bottom,
+    rgba(131, 58, 180, 1) 0%,
+    rgba(253, 29, 29, 1) 50%,
+    rgba(252, 176, 69, 1) 100%
+  );
+  transform: scale(0.97);
+}
+.telegram {
+  width: 230px;
+  height: 130px;
+  border-radius: 86px;
+  border: 1px solid #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(15deg);
+}
+.telegram:hover {
+  background: #080808;
+  transform: scale(0.95) rotate(15deg);
+}
+.telegram:hover svg {
+  fill: #fffef7;
+}
+.telegram svg {
+  width: 37px;
+  height: 37px;
+}
+.linkedin {
+  width: 140px;
+  height: 140px;
+  border-radius: 100%;
+  border: 1px solid #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.linkedin svg {
+  width: 37.5px;
+  height: 37.5px;
+}
+.linkedin:hover {
+  background: rgba(12, 100, 197, 1);
+  transform: scale(0.95);
+}
+.linkedin:hover svg {
+  fill: #fffef7;
+}
+.page__block-volunteers {
+}
+.block__volunteers {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+}
+.volunteers__title {
+  font-family: "Lubalin Graph";
+  font-style: normal;
+  font-weight: 5;
+  font-size: 70px;
+  line-height: 100%;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+  color: #2e2e2e;
+}
+.volunteers__buttons {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+.volunteers__but {
+  max-width: 100%;
+  width: 100%;
+  height: 160px;
+  background: rgba(255, 238, 88, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Lubalin Graph";
+  font-style: normal;
+  font-weight: 5;
+  font-size: 40px;
+  line-height: 57px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #2e2e2e;
+  border-radius: 83px;
+  border: 1px solid #000;
+  transition: 0.1s;
+}
+.volunteers__but:last-child {
+  background: rgba(75, 97, 241, 1);
+  color: #f0f0f0;
+}
+/* .volunteers__but:hover {
+  background: rgba(75, 97, 241, 1);
+  color: #fffef7;
+} */
+.volunteers__but:active {
+  transform: scale(0.99);
+}
+.footer {
+  background: #4b61f1;
+  margin-top: 120px;
+}
+.footer__body {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 40px 100px 40px 40px;
+}
+.footer__top {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+.footer__logo {
+}
+.footer__top .language-dropdown {
+}
+.footer__top .language-dropdown .btn {
+  margin: 0;
+}
+.footer__sitemap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 20px;
+  display: none;
+}
+.sitemap__title,
+.adress__title {
+  font-family: "Lubalin Graph";
+  font-style: normal;
+  font-weight: 5;
+  font-size: 18px;
+  line-height: 100%;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: #fffef7;
+}
+.adress__title {
+}
+.sitemap__nav {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 6px;
+}
+.sitemap-link,
+.adress__txt {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: -0.01em;
+  color: #fffef7;
+}
+.footer__adresss {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 20px;
+  max-width: 265px;
+}
+
+.footer__bot {
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+.bot__2024 {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  text-align: center;
+  color: #fffef7;
+  white-space: nowrap;
+}
+.bot__box {
+  max-width: 980px;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-left: 325px;
+}
+.bot__design {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: #fffef7;
+  cursor: pointer;
+}
+.bot__design:hover {
+  text-decoration-line: underline;
+}
+.bot__group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+}
+.bot__icon {
+  width: 50px;
+  height: 50px;
+  border: 1px solid #ffffff;
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.marquee__text {
+  overflow: hidden;
+}
+.marquee-0 {
+  max-width: 641px;
+}
+.marquee-1 {
+  max-width: 688px;
+}
+.marquee-2 {
+  max-width: 999px;
+}
+.marquee-3 {
+  max-width: 692px;
+}
+.marquee-4 {
+  max-width: 770px;
+}
+.marquee-5 {
+  max-width: 932px;
+}
+.marquee__text div {
+  width: 200%;
+  display: flex;
+  animation: marquee 10s linear infinite;
+}
+.marquee__text div h2 {
+  white-space: nowrap;
+  width: 100%;
+}
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 1400px) {
+  .swiper {
+    max-width: 100%;
+  }
+  .swiper-wrapper {
+  }
+  .swiper-slide {
+    display: flex;
+  }
+  .slider__card {
+  }
+}
+@media (max-width: 1360px) {
+}
+@media (max-width: 1280px) {
+}
+
+@media (max-width: 1220px) {
+}
+@media (max-width: 1200px) {
+}
+@media (max-width: 1199px) {
+}
+@media (max-width: 1024px) {
+  .header__body {
+    margin-top: 25px;
+  }
+  .page__main-block-1 {
+    margin-top: 50px;
+  }
+  .block-1__title {
+    font-family: "Lubalin Graph";
+    font-style: normal;
+    font-weight: 5;
+    font-size: 70px;
+    line-height: 100%;
+    text-align: center;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+    color: #2e2e2e;
+  }
+  .block-1__p {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 120%;
+    text-align: justify;
+    color: #2e2e2e;
+  }
+  .block-1__circle {
+    width: 140px;
+    height: 140px;
+  }
+  .page__main-block-2 {
+    margin-top: 80px;
+  }
+  .main__block-2 {
+  }
+  .block-2__content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  .content__text {
+  }
+  .slider__wrapper {
+    gap: 10px;
+  }
+  .slider__img {
+    width: 355px;
+    height: 355px;
+  }
+  @keyframes slide {
+    0% {
+      transform: translateZ(0);
+    }
+    100% {
+      transform: translate3d(-365px, 0, 0);
+    }
+  }
+  .page__main-block-3 {
+    margin-top: 80px;
+  }
+  .block-3__content {
+    padding-top: 127.6%;
+  }
+  .medium {
+    max-width: 519px;
+    max-height: 519px;
+    width: 50.7vw;
+    height: 50.7vw;
+  }
+  .circle__title {
+    font-size: clamp(60px, 11.8vw, 120px);
+  }
+  .circe__text {
+    font-size: clamp(12px, 2.4vw, 24px);
+  }
+  .small {
+    max-width: 354px;
+    max-height: 354px;
+    width: 34.6vw;
+    height: 34.6vw;
+  }
+  .voluntarios {
+    left: 55%;
+  }
+  .big {
+    max-width: 582px;
+    max-height: 582px;
+    width: 56.9vw;
+    height: 56.9vw;
+    top: 31%;
+    bottom: auto;
+  }
+  .programas {
+    left: 0;
+    top: 44%;
+  }
+  .personas {
+    bottom: 0;
+    top: auto;
+    left: 18%;
+  }
+  .page__block-video {
+    margin-top: 80px;
+  }
+  .block__video {
+  }
+  .video__container {
+  }
+  .page__block-projects {
+    margin-top: 80px;
+  }
+  .block__projects {
+    gap: 20px;
+  }
+  .project__content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  .project__text {
+  }
+  .project__slider {
+  }
+  .slider__cards {
+  }
+  .page__block-social {
+  }
+  .block__social {
+  }
+  .social__media {
+  }
+  .page__block-volunteers {
+    margin-top: 80px;
+  }
+  .block__volunteers {
+  }
+  .volunteers__but {
+  }
+  .footer {
+    margin-top: 100px;
+  }
+  .footer__body {
+    padding: 30px;
+  }
+  .footer__top {
+  }
+  .top__box {
+    display: flex;
+    align-items: flex-start;
+  }
+  .footer__sitemap {
+  }
+  .footer__bot {
+    align-items: flex-end;
+    gap: 20px;
+    flex-direction: column;
+    width: auto;
+  }
+  .bot__box {
+    max-width: 600px;
+    width: 100%;
+    margin-left: 307px;
+  }
+  .bot__2024 {
+  }
+  .bot__design {
+    margin: 0;
+  }
+  .footer__bot .language-dropdown {
+    display: block;
+    position: inherit;
+  }
+}
+@media (max-width: 992px) {
+}
+@media (max-width: 885px) {
+  .footer__body {
+    padding: 20px 10px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+}
+@media (max-width: 830px) {
+  .social__media {
+    max-width: 355px;
+    height: 382px;
+    width: 100%;
+    gap: 20px;
+    position: relative;
+  }
+  .facebook {
+    position: absolute;
+    left: 0;
+  }
+  .instagram {
+    position: absolute;
+    right: 0;
+    top: 20%;
+  }
+  .telegram {
+    position: absolute;
+    left: 0;
+    top: 43%;
+  }
+  .linkedin {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+}
+@media (max-width: 710px) {
+  .swiper-slide {
+  }
+  .slider__card {
+  }
+  .card__img {
+  }
+}
+@media (max-width: 675px) {
+}
+@media (max-width: 633px) {
+}
+@media (max-width: 576px) {
+  .content__circle {
+    max-width: 100%;
+    width: 100%;
+    height: 179px;
+    position: inherit;
+    top: 0;
+    left: 0;
+    border-radius: 135px;
+    gap: 10px;
+    margin: 0 auto;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 100%;
+    text-align: center;
+    letter-spacing: -0.05em;
+    color: #2e2e2e;
+    padding: 40px;
+  }
+  .main__block-3 {
+    gap: 20px;
+  }
+  .block-3__content {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .circle__title {
+    font-size: 65px;
+  }
+  .circe__text {
+    font-size: 24px;
+  }
+}
+@media (max-width: 500px) {
+}
+@media (max-width: 545px) {
+}
+@media (max-width: 495px) {
+}
+@media (max-width: 435px) {
+  .header {
+    padding: 0 10px;
+  }
+  ._container {
+  }
+  .main-block {
+    padding: 0 10px;
+  }
+  .page__main-block-1 {
+    margin-top: 40px;
+  }
+  .body__container {
+  }
+  .header__body {
+    border-radius: 20px;
+    margin-top: 16px;
+  }
+  .main__block-1 {
+  }
+  .block-1__title {
+    font-family: "Lubalin Graph";
+    font-style: normal;
+    font-weight: 5;
+    font-size: 60px;
+    line-height: 100%;
+    text-align: center;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+    color: #2e2e2e;
+  }
+  .block-1__box {
+    flex-direction: column;
+    gap: 0;
+  }
+  .block-1__p {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 120%;
+    text-align: justify;
+    letter-spacing: -0.05em;
+    color: #2e2e2e;
+  }
+  .page__main-block-2 {
+    margin-top: 60px;
+  }
+  .main__block-2 {
+    padding: 0;
+    gap: 20px;
+  }
+  .content__title {
+    font-family: "Lubalin Graph";
+    font-style: normal;
+    font-weight: 5;
+    font-size: 40px;
+    line-height: 100%;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+    color: #2e2e2e;
+  }
+  .content__text {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 120%;
+    text-align: justify;
+    letter-spacing: -0.05em;
+    color: #2e2e2e;
+  }
+  .content__text p {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 120%;
+    text-align: justify;
+    letter-spacing: -0.05em;
+    color: #2e2e2e;
+  }
+  .page__main-block-3 {
+    margin-top: 60px;
+  }
+  .main__block-3 {
+  }
+  .block-3__title {
+    font-family: "Lubalin Graph";
+    font-style: normal;
+    font-weight: 5;
+    font-size: 40px;
+    line-height: 100%;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+    color: #2e2e2e;
+  }
+  .block-3__content {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+  .blue__txt {
+    font-family: "Lubalin Graph";
+    font-style: normal;
+    font-weight: 5;
+    font-size: 100px;
+    line-height: 100%;
+    text-align: center;
+    text-transform: uppercase;
+    color: #4b61f1;
+  }
+  .page__block-video {
+    margin-top: 60px;
+  }
+  .block__video {
+    gap: 20px;
+  }
+  .video__title {
+    font-family: "Lubalin Graph";
+    font-style: normal;
+    font-weight: 5;
+    font-size: 40px;
+    line-height: 100%;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+    color: #2e2e2e;
+  }
+  .video__container {
+  }
+  .page__block-projects {
+    margin-top: 60px;
+  }
+  .block__projects {
+  }
+  .project__slider {
+    gap: 0;
+  }
+  .project__title {
+    font-family: "Lubalin Graph";
+    font-style: normal;
+    font-weight: 5;
+    font-size: 40px;
+    line-height: 100%;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+    color: #2e2e2e;
+  }
+  .project__text {
+    width: auto;
+  }
+  .project__text p {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 120%;
+    text-align: justify;
+    letter-spacing: -0.05em;
+    color: #2e2e2e;
+  }
+  .slider__buttons {
+    display: none;
+  }
+
+  .card__about {
+    max-width: 100%;
+    align-items: flex-start;
+  }
+  .card__about svg {
+    margin-top: 20px;
+  }
+  .profile__user {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 100%;
+    letter-spacing: -0.03em;
+    color: #2e2e2e;
+  }
+  .page__block-social {
+    margin-top: 60px;
+  }
+  .block__social {
+  }
+  .social__title {
+    font-family: "Lubalin Graph";
+    font-style: normal;
+    font-weight: 5;
+    font-size: 40px;
+    line-height: 100%;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+    color: #2e2e2e;
+  }
+  .social__media {
+  }
+  .facebook {
+  }
+  .telegram {
+  }
+  .instagram {
+  }
+  .linkedin {
+  }
+  .block__volunteers {
+    gap: 20px;
+  }
+  .volunteers__title {
+    font-family: "Lubalin Graph";
+    font-style: normal;
+    font-weight: 5;
+    font-size: 40px;
+    line-height: 100%;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+    color: #2e2e2e;
+  }
+  .page__block-volunteers {
+    margin-top: 60px;
+  }
+  .volunteers__buttons {
+    gap: 10px;
+  }
+  .volunteers__but {
+    font-family: "Lubalin Graph";
+    font-style: normal;
+    font-weight: 5;
+    font-size: 30px;
+    line-height: 43px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #2e2e2e;
+  }
+
+  .header__contact {
+    left: 30px;
+    top: 36px;
+  }
+  .nav__link {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+    color: #fffef7;
+  }
+  .footer {
+    margin-top: 60px;
+  }
+}
+@media (hover: none) and (pointer: coarse) {
+  .slider__card:hover {
+  }
+}

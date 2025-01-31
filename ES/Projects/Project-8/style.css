@@ -1,0 +1,310 @@
+.body__container {
+}
+.main__about-projects {
+  margin-top: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 0 20px;
+  gap: 40px;
+}
+.about__projects-head {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+.about-projects__title {
+  font-family: "Lubalin Graph";
+  font-style: normal;
+  font-weight: 5;
+  font-size: 80px;
+  line-height: 100%;
+  text-transform: uppercase;
+  color: #2e2e2e;
+  text-align: left;
+}
+.about-projects__subtitle {
+  font-family: "Lubalin Graph";
+  font-style: normal;
+  font-weight: 5;
+  font-size: 60px;
+  line-height: 120%;
+  text-transform: uppercase;
+  color: #4b61f1;
+}
+.about-projects__text {
+  max-width: 670px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: left;
+  gap: 10px;
+  margin: 40px 0 20px 0;
+}
+.about-projects__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  gap: 20px;
+  width: 100%;
+}
+.about-projects__txt {
+  display: flex;
+  max-width: 670px;
+  flex-direction: column;
+  gap: 20px;
+}
+.about-projects__txt h5 {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 120%;
+  text-align: justify;
+  letter-spacing: -0.02em;
+  color: #2e2e2e;
+}
+.about-projects__txt ul {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 120%;
+  text-align: justify;
+  letter-spacing: -0.02em;
+  color: #2e2e2e;
+  list-style-type: none;
+  padding-left: 10px;
+}
+.about-projects__txt ul li {
+  position: relative;
+  padding-left: 20px;
+}
+.about-projects__txt ul li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.about-projects__imgs {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr; /* розподіл на три колонки */
+  gap: 20px; /* відступ між елементами */
+  width: 100%;
+}
+.about-projects__imgs img {
+  object-fit: cover;
+  object-position: center;
+}
+.img__box {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+}
+.about-projects__subimg {
+  width: 325px;
+  height: 300px;
+  background: #d9d9d9;
+  border-radius: 30px;
+}
+.about-projects__img {
+  width: 100%;
+  max-width: 670px;
+  height: 620px;
+  background: #d9d9d9;
+  border-radius: 30px;
+}
+
+@media (max-width: 1366px) {
+  .main__about-projects {
+    max-width: 964px;
+  }
+  .about-projects__content {
+    align-items: flex-start;
+  }
+  .about-projects__imgs {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .img__box:first-child {
+    display: contents;
+  }
+
+  .img__box:first-child .about-projects__subimg:first-child {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+  }
+
+  .img__box:first-child .about-projects__subimg:last-child {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+  }
+
+  .about-projects__img {
+    grid-column: 2 / 4;
+    grid-row: 2 / 3;
+    height: 308px;
+  }
+  .about-projects__subimg {
+    width: 308px;
+    height: 308px;
+  }
+  .img__box:last-child {
+    display: contents;
+  }
+
+  .img__box:last-child .about-projects__subimg:first-child {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+  }
+
+  .img__box:last-child .about-projects__subimg:last-child {
+    grid-column: 3 / 4;
+    grid-row: 1 / 2;
+  }
+}
+@media (max-width: 1024px) {
+  .main__about-projects {
+    margin-top: 60px;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  .about-projects__title {
+    font-family: "Lubalin Graph";
+    font-style: normal;
+    font-weight: 5;
+    font-size: 70px;
+    line-height: 100%;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+    color: #2e2e2e;
+  }
+  .about-projects__subtitle {
+    font-size: 50px;
+  }
+}
+@media (max-width: 1004px) {
+  .about-projects__imgs {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 636px;
+    gap: 20px;
+  }
+
+  .img__box:first-child {
+    display: contents;
+  }
+
+  .img__box:first-child .about-projects__subimg:first-child {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+  }
+
+  .img__box:first-child .about-projects__subimg:last-child {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+  }
+
+  .about-projects__img {
+    grid-column: 1 / 3;
+    grid-row: 3 / 4;
+  }
+
+  .img__box:last-child {
+    display: contents;
+  }
+
+  .img__box:last-child .about-projects__subimg:first-child {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+  }
+
+  .img__box:last-child .about-projects__subimg:last-child {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+  }
+}
+@media (max-width: 676px) {
+  .about-projects__imgs {
+    max-width: 355px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .about-projects__imgs div {
+    max-width: 100%;
+    min-width: auto;
+    width: 100%;
+    height: 355px;
+  }
+  .about-projects__img {
+    width: 355px;
+    min-width: 0;
+  }
+  .about-projects__imgs img {
+    width: 100%;
+    height: 355px;
+  }
+}
+@media (max-width: 512px) {
+  .about-projects__title {
+    font-size: 60px;
+  }
+  .about-projects__subtitle {
+    font-size: 40px;
+  }
+}
+@media (max-width: 435px) {
+  .main__about-projects {
+    padding: 0 10px;
+    margin-top: 40px;
+  }
+  .about-projects__title {
+    font-family: "Lubalin Graph";
+    font-style: normal;
+    font-weight: 5;
+    font-size: 35px;
+    line-height: 110%;
+    text-transform: uppercase;
+    color: #2e2e2e;
+  }
+  .about-projects__subtitle {
+    font-family: "Lubalin Graph";
+    font-style: normal;
+    font-weight: 5;
+    font-size: 25px;
+    line-height: 120%;
+    text-transform: uppercase;
+    color: #4b61f1;
+  }
+  .about-projects__content h5 {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 120%;
+    text-align: justify;
+    letter-spacing: -0.02em;
+    color: #2e2e2e;
+  }
+  .about-projects__text p {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 120%;
+    letter-spacing: -0.02em;
+    color: #2e2e2e;
+  }
+  .about-projects__txt ul {
+    font-size: 18px;
+  }
+}
